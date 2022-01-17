@@ -1,0 +1,42 @@
+<h1 class="text-center mt-4"> Articles </h1>
+
+<div class="container">
+<% @articles.each do |article| %>
+    <div class="row justify-content-md-center"> 
+    <div class="col-12 mt-4">
+<div class="card text-center shadow  mb-5 bg-white rounded">
+  <div class="card-header font-italic">
+    By  Benshalom
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">  <%= link_to article.title, article_path(article), class: "text-success" %> </h5>
+    <p class="card-text"><%=  truncate(article.description, length:100) %></p>
+    <a href= "show" class="btn btn-success">View</a>
+    <a href="#" class="btn btn-success">Edit</a>
+    <a href="#" class="btn btn-success">Delete</a>
+    <%= link_to 'Show ', article_path(article)  %>
+
+  </div>
+  <div class="card-footer text-muted">
+    <small> Created   <%= time_ago_in_words(article.created_at) %> ago,
+
+    edited  <%= time_ago_in_words(article.updated_at) %> ago </small>
+  </div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+
