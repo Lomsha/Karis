@@ -24,8 +24,6 @@ Things you may want to cover:
 * ...
 
 
-<h1> Article details </h1>
-<p> <strong> Title: </strong> <%= @article.title %></p>
-<p> <strong> Description: </strong>  <%= @article.description %></p>
+
 
 
