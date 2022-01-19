@@ -1,22 +1,14 @@
+<h1 class="text-center mt-4">   Log in </h1>
+
 <div class="container bg-dark">
 <div class= "row justify-content-center">
 
 <div class = "col-10 mt-5">
 
-<%= render 'shared/errors', obj: @user %>
 
 
-<%= form_with(model: @user, class: "shadow p-3 mb-3 bg-dark rounded  row justify-content-center", local: true) do |f| %>
-<div class = "form-group row">
+<%= form_with(scope: :session, url: login_path, class: "shadow p-3 mb-3 bg-dark rounded  row justify-content-center", local: true) do |f| %>
 
-
- <%= f.label  :username, class: "col-1 col-form-label text-light" %> 
-<div class= "col-10">
-
-<%= f.text_field :username, class: "form-control shadow rounded", placeholder: "Enter your username" %>
-
- </div>
-</div>
 
 
 <div class = "form-group row mt-3 mb-5">
@@ -34,7 +26,7 @@
 </div>
 
 <div   class="form-group row justify-content-center mt-2">
- <%= f.submit(@user.new_record? ?   "Sign Up" : "Update Account", class: "btn btn-primary   col-2 col-form-label") %> 
+ <%= f.submit "Log in",  class: "btn btn-primary   col-2 col-form-label" %> 
  </div>
     <% end %>
 </div>

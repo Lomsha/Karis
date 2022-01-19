@@ -8,13 +8,14 @@
   By  <%= @article.user.username if @article.user %>
   </div>
 
-  <div class="card-body mb-3">
+  <div class="card-body mt-3">
     <div class="card-text text-left mt-3"><%= simple_format ( @article.description) %></div>
-<%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
-<%= button_to "Delete", article_path(@article), class: "btn btn-primary col-md-1 mt-3", method: :delete %>
+
 </div>
 
   <div class="card-footer text-muted mb-5">
+  <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+<%= button_to "Delete", article_path(@article), class: "btn btn-primary col-md-1 mt-3", method: :delete %>
     <small> Created   <%= time_ago_in_words(@article.created_at) %> ago,
 
     edited  <%= time_ago_in_words(@article.updated_at) %> ago </small>

@@ -1,0 +1,21 @@
+
+<h1 class= "text-center mt-3"> <%= @user.username %>'s profile 
+
+
+</h1>
+
+<h2 class="text-right, d-flex flex-column min-vh-100, mb-3"> 
+
+<%= gravatar_for @user, size: 100  %>
+
+<div class= "text-center mt-3">Articles by <%= @user.username%> </div>
+
+</h2>
+
+
+<p class = " text-center, mb-1, col-12">
+
+
+<%= render 'articles/article', class: "" %>
+
+</p>
