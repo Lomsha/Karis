@@ -19,11 +19,22 @@
 
    <%= link_to "View Profile",  user, class: "btn btn-primary"  %>
 
-   <% if logged_in? && user == current_user %>
+   <% if logged_in? %> 
    
-   <%= link_to "Edit Profile",  edit_user_path(user), class: "btn btn-primary"  %>
+   <% if  user == current_user  && !current_user.admin? %> 
+<%= link_to "Edit Profile",  edit_user_path(user), class: "btn btn-primary"  %>
+<%= button_to "Delete Profile", user_path(user), class: "btn btn-primary col-md-1 mt-3", method: :delete  %>
 
-   <% end %>
+<% end %>
+
+<% if current_user.admin? %>
+<%= button_to "Delete User", user_path(user), class: "btn btn-primary col-md-1 mt-3", method: :delete  %>
+
+<% end %>
+<% end %>
+
+
+
   </div>
   <div class="card-footer text-muted">
     <small> Joined   <%= time_ago_in_words(user.created_at) %> ago,
