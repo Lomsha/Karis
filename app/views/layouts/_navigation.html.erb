@@ -20,15 +20,23 @@
         
         <% if logged_in? %>
           <%= link_to "Create new Article", new_article_path, class: "nav-link" %>
+
 <% end %>
 
         </li>
 
         <%= link_to "Bloggers", users_path, class: "nav-link" %>
+        
 
       <% if logged_in? %>
         <%= link_to "Logout", logout_path, class: "nav-link", method: :delete %>
+        <%= link_to " Categories", categories_path, class: "nav-link" %>
 
+
+
+        <% if logged_in?  && current_user.admin? %>
+        <%= link_to " Create Categories", new_category_path, class: "nav-link" %>
+<% end %>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 

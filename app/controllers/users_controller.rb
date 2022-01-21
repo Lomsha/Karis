@@ -5,6 +5,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
 
 
 
+
 def show 
 
 @articles = @user.articles
